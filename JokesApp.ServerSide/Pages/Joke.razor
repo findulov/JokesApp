@@ -1,0 +1,34 @@
+﻿@page "/joke/{jokeId:int}"
+@using JokesApp.Shared.Services
+@using JokesApp.Shared.Models
+@attribute [Authorize]
+@inject IJSRuntime JsRuntime
+@inject IJokesService JokesService
+
+<div class="row">
+    <div class="col-12">
+        @if (joke == null)
+        {
+            <h4>Joke is being loaded...</h4>
+        }
+        else
+        {
+            <h3 class="text-center">
+                @joke.Joke
+            </h3>
+        }
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    private int jokeId { get; set; }
+
+    private JokeModel joke;
+
+    protected override async Task OnInitAsync()
+    {
+        joke = await JokesService.GetById(jokeId);
+    }
+}

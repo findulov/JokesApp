@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29021.104
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JokesApp.ServerSide", "JokesApp.ServerSide\JokesApp.ServerSide.csproj", "{91F44802-017E-4D62-8D9E-429F88A7ED47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JokesApp.Shared", "JokesApp.Shared\JokesApp.Shared.csproj", "{B9ABB945-E31F-48E1-85E5-506AF767AFE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JokesApp.DataLayer", "JokesApp.DataLayer\JokesApp.DataLayer.csproj", "{9242A041-7634-4793-84EB-7084E737AD7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JokesApp.Server.Shared", "JokesApp.Server.Shared\JokesApp.Server.Shared.csproj", "{168A226C-0269-48C4-A7CE-AD93380B55B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JokesApp.ClientSide", "JokesApp.ClientSide\JokesApp.ClientSide.csproj", "{B6042DFB-C47B-43CE-AFD4-BF8F2CFD400A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JokesApp.WebApi", "JokesApp.WebApi\JokesApp.WebApi.csproj", "{D5FF4594-ECFC-47ED-A459-64E219E3E5AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91F44802-017E-4D62-8D9E-429F88A7ED47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F44802-017E-4D62-8D9E-429F88A7ED47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F44802-017E-4D62-8D9E-429F88A7ED47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F44802-017E-4D62-8D9E-429F88A7ED47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9ABB945-E31F-48E1-85E5-506AF767AFE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9ABB945-E31F-48E1-85E5-506AF767AFE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9ABB945-E31F-48E1-85E5-506AF767AFE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9ABB945-E31F-48E1-85E5-506AF767AFE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9242A041-7634-4793-84EB-7084E737AD7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9242A041-7634-4793-84EB-7084E737AD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9242A041-7634-4793-84EB-7084E737AD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9242A041-7634-4793-84EB-7084E737AD7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168A226C-0269-48C4-A7CE-AD93380B55B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168A226C-0269-48C4-A7CE-AD93380B55B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168A226C-0269-48C4-A7CE-AD93380B55B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168A226C-0269-48C4-A7CE-AD93380B55B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6042DFB-C47B-43CE-AFD4-BF8F2CFD400A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6042DFB-C47B-43CE-AFD4-BF8F2CFD400A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6042DFB-C47B-43CE-AFD4-BF8F2CFD400A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6042DFB-C47B-43CE-AFD4-BF8F2CFD400A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FF4594-ECFC-47ED-A459-64E219E3E5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FF4594-ECFC-47ED-A459-64E219E3E5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FF4594-ECFC-47ED-A459-64E219E3E5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FF4594-ECFC-47ED-A459-64E219E3E5AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {356E524E-7887-4CF9-B0C3-C9CB776E6F1F}
+	EndGlobalSection
+EndGlobal

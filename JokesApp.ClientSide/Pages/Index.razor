@@ -1,0 +1,65 @@
+﻿@page "/"
+@using JokesApp.Shared.Services
+@using JokesApp.Shared.Models
+@inject IJSRuntime JsRuntime
+@inject IJokesService JokesService
+@inject IUriHelper UriHelper
+
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-primary float-right btn-search" @onclick="@(async () => await Search())">Search</button>
+        <input class="float-right form-control col-3" type="search" placeholder="Search..." @bind="SearchQuery" />
+    </div>
+</div>
+
+@if (jokes == null)
+{
+    <h5>Loading jokes...</h5>
+}
+else if (jokes.Count() == 0)
+{
+    <h5 class="text-danger">No jokes found</h5>
+}
+else
+{
+    <hr />
+    <div class="row">
+        @foreach (var joke in jokes)
+        {
+            <div class="col-4">
+                <div class="card-container">
+                    <div class="card" @onclick="@(() => UriHelper.NavigateTo($"/joke/{joke.Id}"))">
+                        <div class="card-body">
+                            <p class="card-text">@joke.Joke...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<button class="btn btn-primary back-to-top" @onclick="@(async () => await NavigateToTop())">Back to top</button>
+
+@functions {
+    private IEnumerable<JokeModel> jokes;
+
+    private string SearchQuery { get; set; }
+
+    protected override async Task OnInitAsync()
+    {
+        // Simulate delay of 3 seconds.
+        //await Task.Delay(3000);
+        jokes = await JokesService.GetAll();
+    }
+
+    private async Task Search()
+    {
+        jokes = await JokesService.GetAll(SearchQuery);
+    }
+
+    private async Task NavigateToTop()
+    {
+        await JsRuntime.InvokeAsync<object>("demo.scrollToTop", null);
+    }
+}

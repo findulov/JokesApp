@@ -1,0 +1,39 @@
+﻿@page "/joke/add"
+@using JokesApp.Shared.Services
+@using JokesApp.Shared.Models
+@attribute [Authorize]
+@inject IJokesService JokesService
+@inject IJSRuntime JsRuntime
+@inject IUriHelper UriHelper
+
+<div class="row">
+    <div class="col-6">
+        <EditForm Model="@addJokeModel" OnValidSubmit="@(async () => await HandleValidSubmit())">
+            <DataAnnotationsValidator />
+
+            <div class="form-group">
+                <label>Add joke:</label>
+                <InputTextArea Class="form-control" @bind-Value="@addJokeModel.Joke"></InputTextArea>
+                <ValidationMessage For="@(() => addJokeModel.Joke)"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary float-right" type="submit">Save</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private AddJokeModel addJokeModel = new AddJokeModel();
+
+    private async Task HandleValidSubmit()
+    {
+        bool success = await JokesService.Add(addJokeModel);
+        await JsRuntime.InvokeAsync<object>("demo.showMessage", success ? "Joke is successfully saved" : "Error saving the joke");
+
+        if (success)
+        {
+        UriHelper.NavigateTo("/");
+        }
+    }
+}

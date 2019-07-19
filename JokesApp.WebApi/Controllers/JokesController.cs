@@ -39,7 +39,7 @@ namespace JokesApp.WebApi.Controllers
 
         [HttpPost]
         [Route("add")]
-        public async Task<IActionResult> Add([FromBody] AddJokeModel model)
+        public async Task<IActionResult> Add(AddJokeModel model)
         {
             bool success = false;
 
